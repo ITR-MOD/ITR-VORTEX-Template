@@ -1,3 +1,4 @@
+```
 /modname/[.pak, .ucas, .utoc]           
     =>  pakdir/Mods/modname/[.pak, .ucas, .utoc]
 /modname/LogicMods[.pak, .ucas, .utoc]
@@ -11,3 +12,4 @@ if modname/LuaMods/enabled.txt
         => pakdir/LuaMods/modname/enabled.txt
     /modname/LuaMods/Scripts/
         => pakdir/LuaMods/modname/Scripts/
+```
