@@ -1,5 +1,5 @@
 full:
-	7z a example-full.zip example/ example-root.pak
+	7z a example-full.zip example/ example-custom/ example-root.pak
 
 luashared:
 	7z a example-luashared.zip example/shared/
@@ -13,7 +13,11 @@ logic:
 normal:
 	7z a example-mod.zip example-root.pak example/example-folder.pak
 
+custom:
+	7z a example-custom.zip example-custom/
+
 clean:
 	rm -f example-full.zip example-luashared.zip example-luamod.zip example-logic.zip example-mod.zip
-default: clean full luashared luamod logic normal
+	
+default: clean full
 	
