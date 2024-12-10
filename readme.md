@@ -126,13 +126,12 @@ mod.zip/
 |   |   |   +--- main.lua
 |   |   +--- shared/
 |   |   |   +--- example.lua
-|   |   +--- custom.txt
 |   +--- IntoTheRadius2/
 |   |   +--- Content/
 |   |   |   +--- ITR2/
 |   |   |   |   +--- IniSettings/
 |   |   |   |   |   +--- Settings.ini
-
+|   |   |   |   |   +--- custom.txt
 ```
 
 ---
