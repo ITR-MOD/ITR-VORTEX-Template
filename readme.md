@@ -101,6 +101,37 @@ LogicMods **require a specific subfolder structure** and are installed into `Int
 
 ---
 
+#### **SimpleModLoader Mods**
+
+SimpleModLoader mods are installed into `IntoTheRadius2/Content/Mods/` (not inside `Paks`). They are identified by the presence of a `.uplugin` file that shares its base name with the accompanying `.pak`, `.ucas`, and `.utoc` files.
+
+**Structure:**
+
+- All four files must share the same base name and sit in a folder named after your mod:
+
+    ```
+    mod.zip/modName/modName.pak
+    mod.zip/modName/modName.ucas
+    mod.zip/modName/modName.utoc
+    mod.zip/modName/modName.uplugin
+    ```
+
+  Resulting in:
+
+    ```
+    IntoTheRadius2/Content/Mods/modName/modName.pak
+    IntoTheRadius2/Content/Mods/modName/modName.ucas
+    IntoTheRadius2/Content/Mods/modName/modName.utoc
+    IntoTheRadius2/Content/Mods/modName/modName.uplugin
+    ```
+
+**Key Rules:**
+
+1. The `.uplugin` file **must** share its base name with the `.pak`/`.ucas`/`.utoc` files — this is what triggers SML detection.
+2. Do NOT include a `.uplugin` file in a standard PAK mod; it will be treated as an SML mod and installed to `Content/Mods/` instead of `Content/Paks/Mods/`.
+
+---
+
 ### Notice for FOMOD Installers
 
 **FOMOD installers must account for the base path being the game install folder, not the mods folder.**
@@ -150,6 +181,9 @@ mod.zip/
 |   |   |   +--- main.lua
 |   |   +--- shared/
 |   |   |   +--- example.lua
+|   +--- example-sml/              <-- SimpleModLoader mod
+|   |   +--- example-sml.pak
+|   |   +--- example-sml.uplugin   <-- Triggers SML detection
 |   +--- IntoTheRadius2/
 |   |   +--- Content/
 |   |   |   +--- ITR2/
@@ -182,6 +216,11 @@ IntoTheRadius2/Content/Paks/Mods/
 |   +--- example/
 |   |   +--- example-folder.pak
 |   +--- example-root.pak
+
+IntoTheRadius2/Content/Mods/
+|   +--- example-sml/
+|   |   +--- example-sml.pak
+|   |   +--- example-sml.uplugin
 
 IntoTheRadius2/Content/ITR2/IniSettings/
 |   +--- Settings.ini
